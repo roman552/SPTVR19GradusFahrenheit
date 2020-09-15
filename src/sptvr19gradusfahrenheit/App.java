@@ -14,11 +14,18 @@ import java.util.Scanner;
 class App {
     private Scanner scanner = new Scanner(System.in);
     public void run() {
-        System.out.println("Конвертер градусов Цельсия в градусы по фаренгейту");
-        System.out.println("Введите градусы по Цельсию: ");
-        double gradC = scanner.nextDouble();
+        System.out.println("Конвертер градусов Цельсия в градусы по фаренгейту и наоборот");
+        System.out.println("Введите что перевести (цельсий-c,фаренгейт-f): ");
+        String gradCF = scanner.nextLine();
+        System.out.println("Введите градусы: ");
+        double grad = scanner.nextDouble();
+        if(gradCF.equals("c")) {
         System.out.println("По фаренгейту это: ");
-        System.out.println((1.8*gradC)+32);
+        System.out.printf("%.2f",(1.8*grad)+32);
+        } else if (gradCF.equals("f")) {
+            System.out.println("По цельсию это:");
+            System.out.printf("%.2f",(grad-32)/1.8);
+        }
         
     }
 }
